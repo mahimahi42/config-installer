@@ -81,6 +81,7 @@ installConfigs() {
             mkdir $CONFIG_BAK_DIR
         fi
         mv ~/$ZSH $CONFIG_BAK_DIR
+    fi
 
     git clone https://github.com/mahimahi42/config-sync.git tmp
 
