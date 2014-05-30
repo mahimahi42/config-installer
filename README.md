@@ -3,9 +3,9 @@ config-installer
 
 Installer for my personal configuration and setup
 
-= Usage
+# Usage
 
-== Installation
+## Installation
 
 ```shell
 // Make sure git is installed on the machine, but that's it!
@@ -15,8 +15,10 @@ chmod u+x install.sh
 ./install.sh
 ```
 
-== Uninstallation
+## Uninstallation
 
 ```shell
-<config-installer dir>/uninstall.sh
+cd <config-installer dir>
+chmod u+x uninstall.sh
+./uninstall.sh
 ```
