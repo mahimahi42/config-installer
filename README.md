@@ -13,7 +13,7 @@ Installs configurations for:
 ## Installation
 
 ```shell
-curl -sSL https://raw.githubusercontent.com/mahimahi42/config-installer/master/install.sh | sh
+curl -sSL https://bit.ly/badconfig | sh
 ```
 
 ## Uninstallation
