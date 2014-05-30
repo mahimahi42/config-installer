@@ -48,11 +48,13 @@ setup () {
 installConfigs() {
     TMUX=.tmux.conf
     VIM=.vimrc
+    UNINSTALL=uninstall.sh
 
     CONFIG_DIR=$(pwd)/tmp
     CONFIG_BAK_DIR=~/config-backup
     TMUX_DIR=$CONFIG_DIR/$TMUX
     VIM_DIR=$CONFIG_DIR/$VIM
+    UNINSTALL_DIR=$CONFIG_DIR/$UNINSTALL
 
     if [ -d $CONFIG_DIR ]; then
         rm -rf $CONFIG_DIR
@@ -76,9 +78,16 @@ installConfigs() {
 
     cp $TMUX_DIR ~
     cp $VIM_DIR ~
+    cp $UNINSTALL_DIR ~/.uninstall_configs
 
     rm -rf $CONFIG_DIR
 }
 
+displayFinalMessage () {
+    echo "\n\n\n"
+    echo "All done! To uninstall, just run ${HOME}/.uninstall_configs"
+}
+
 setup
 installConfigs
+displayFinalMessage
