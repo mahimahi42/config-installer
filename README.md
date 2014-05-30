@@ -14,7 +14,5 @@ curl -sSL https://raw.githubusercontent.com/mahimahi42/config-installer/master/i
 ## Uninstallation
 
 ```shell
-cd <config-installer dir>
-chmod u+x uninstall.sh
-./uninstall.sh
+/home/<username>/.uninstall_configs
 ```
