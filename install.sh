@@ -79,6 +79,7 @@ installConfigs() {
     cp $TMUX_DIR ~
     cp $VIM_DIR ~
     cp $UNINSTALL_DIR ~/.uninstall_configs
+    chmod u+x ~/.uninstall_configs
 
     rm -rf $CONFIG_DIR
 }
