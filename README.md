@@ -1,7 +1,12 @@
 config-installer
 ================
 
-Installer for my personal configuration and setup
+Installer for my personal configuration and setup.
+
+Installs configurations for:
+- tmux
+- vim
+- zsh
 
 # Usage
 
