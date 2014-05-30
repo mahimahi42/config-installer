@@ -5,12 +5,17 @@ OS=$(uname -a)
 TMUX_INSTALL_DIR=~/.tmux.conf
 VIM_INSTALL_DIR=~/.vimrc
 
-TMUX_DIR=$(pwd)/config-sync/.tmux.conf
-VIM_DIR=$(pwd)/config-sync/.vimrc
+CONFIG_DIR=$(pwd)/config-sync
+TMUX_DIR=$CONFIG_DIR/.tmux.conf
+VIM_DIR=$CONFIG_DIR/.vimrc
 
 read  -p "Begin installation? [y/n]: " RESP
 if [ ! "$RESP" = "y" ]; then
     exit
+fi
+
+if [ -d $CONFIG_DIR ]; then
+	rm -rf $CONFIG_DIR
 fi
 
 git clone https://github.com/mahimahi42/config-sync.git
