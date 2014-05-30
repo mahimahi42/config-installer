@@ -96,7 +96,12 @@ installConfigs() {
 
 displayFinalMessage () {
     echo "\n\n\n"
-    echo "All done! To uninstall, just run ${HOME}/.uninstall_configs"
+    echo "All done!"
+    echo "Installed configurations for:"
+    echo "tmux: ${HOME}/$TMUX"
+    echo "vim: ${HOME}/$VIM"
+    echo "zsh: ${HOME}/$ZSH"
+    echo "To uninstall, just run ${HOME}/.uninstall_configs"
 }
 
 setup
