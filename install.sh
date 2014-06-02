@@ -2,8 +2,8 @@
 
 OS=$(uname -a)
 
-TMUX_INSTALL_DIR=~/.tmux.conf
-VIM_INSTALL_DIR=~/.vimrc
+TMUX_INSTALL_DIR=$HOME/.tmux.conf
+VIM_INSTALL_DIR=$HOME/.vimrc
 
 CONFIG_DIR=$(pwd)/config-sync
 TMUX_DIR=$CONFIG_DIR/.tmux.conf
