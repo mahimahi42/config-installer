@@ -27,10 +27,63 @@ installGit () {
     esac
 }
 
+backupConfigs () {
+    BAK_DIR=$HOME/.config-backups/
+
+    if [ -e $HOME/.tmux.conf ]; then
+        if [ ! -d $BAK_DIR ]; then
+            mkdir $BAK_DIR
+        fi
+        mv $HOME/.tmux.conf $BAK_DIR
+    fi
+
+    if [ -e $HOME/.vimrc ]; then
+        if [ ! -d $BAK_DIR ]; then
+            mkdir $BAK_DIR
+        fi
+        mv $HOME/.vimrc $BAK_DIR
+    fi
+
+    if [ -e $HOME/.zshrc ]; then
+        if [ ! -d $BAK_DIR ]; then
+            mkdir $BAK_DIR
+        fi
+        mv $HOME/.zshrc $BAK_DIR
+    fi
+}
+
+installNewConfigs () {
+    git clone https://github.com/mahimahi42/config-sync.git tmp
+
+    cp tmp/.tmux.conf $HOME
+    cp tmp/.vimrc $HOME
+    cp tmp/.zshrc $HOME
+    cp tmp/uninstall.sh $HOME/.uninstall_configs
+    chmod u+x $HOME/.uninstall_configs
+
+    rm -rf tmp/
+}
+
+displayFinalMessage () {
+    echo "\n\n\n"
+    echo "All done!"
+    echo "Installed configurations for:"
+    echo "tmux: $HOME/.tmux.conf"
+    echo "vim: $HOME/.vimrc"
+    echo "zsh: $HOME/.zshrc"
+    echo "To uninstall, run $HOME/.uninstall_configs"
+}
+
 main () {
     displayWelcomeMessage
     
     checkForGit
+
+    backupConfigs
+
+    installNewConfigs
+
+    displayFinalMessage
 }
 
 main
