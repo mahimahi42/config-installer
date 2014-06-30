@@ -32,7 +32,7 @@ backupFile () {
         if [ ! -d $2 ]; then
             mkdir $2
         fi
-        mv $HOME/$1 $BAK_DIR
+        mv $HOME/$1 $2
     fi
 }
 
