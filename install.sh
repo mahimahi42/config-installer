@@ -27,29 +27,42 @@ installGit () {
     esac
 }
 
+backupFile () {
+    if [ -e $HOME/$1 ]; then
+        if [ ! -d $2 ]; then
+            mkdir $2
+        fi
+        mv $HOME/$1 $BAK_DIR
+    fi
+}
+
 backupConfigs () {
     BAK_DIR=$HOME/.config-backups/
 
-    if [ -e $HOME/.tmux.conf ]; then
-        if [ ! -d $BAK_DIR ]; then
-            mkdir $BAK_DIR
-        fi
-        mv $HOME/.tmux.conf $BAK_DIR
-    fi
+    backupFile .tmux.conf $BAK_DIR
+    backupFile .vimrc $BAK_DIR
+    backupFile .zshrc $BAK_DIR
 
-    if [ -e $HOME/.vimrc ]; then
-        if [ ! -d $BAK_DIR ]; then
-            mkdir $BAK_DIR
-        fi
-        mv $HOME/.vimrc $BAK_DIR
-    fi
+#    if [ -e $HOME/.tmux.conf ]; then
+#        if [ ! -d $BAK_DIR ]; then
+#            mkdir $BAK_DIR
+#        fi
+#        mv $HOME/.tmux.conf $BAK_DIR
+#    fi
 
-    if [ -e $HOME/.zshrc ]; then
-        if [ ! -d $BAK_DIR ]; then
-            mkdir $BAK_DIR
-        fi
-        mv $HOME/.zshrc $BAK_DIR
-    fi
+#    if [ -e $HOME/.vimrc ]; then
+#        if [ ! -d $BAK_DIR ]; then
+#            mkdir $BAK_DIR
+#        fi
+#        mv $HOME/.vimrc $BAK_DIR
+#    fi
+
+#    if [ -e $HOME/.zshrc ]; then
+#        if [ ! -d $BAK_DIR ]; then
+#            mkdir $BAK_DIR
+#        fi
+#        mv $HOME/.zshrc $BAK_DIR
+#    fi
 }
 
 installNewConfigs () {
@@ -59,7 +72,7 @@ installNewConfigs () {
     cp tmp/.vimrc $HOME
     cp tmp/.zshrc $HOME
     cp tmp/uninstall.sh $HOME/.uninstall_configs
-    chmod u+x $HOME/.uninstall_configs
+    chmod +x $HOME/.uninstall_configs
 
     rm -rf tmp/
 }
