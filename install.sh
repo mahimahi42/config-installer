@@ -8,12 +8,18 @@ displayWelcomeMessage () {
 }
 
 checkForGit () {
-    GIT_AVAIL=$(which git)
-    if [ -z $GIT_AVAIL ]; then
+#    GIT_AVAIL=$(which git)
+#    if [ -z $GIT_AVAIL ]; then
+#        echo "Checking for git... Not found, will install"
+#        installGit
+#    else
+#        echo "Checking for git... $GIT_AVAIL"
+#    fi
+    if ! hash git 2>/dev/null; then
         echo "Checking for git... Not found, will install"
         installGit
     else
-        echo "Checking for git... $GIT_AVAIL"
+        echo "Checking for git... $(command -v git)"
     fi
 }
 
