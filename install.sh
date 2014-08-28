@@ -30,7 +30,7 @@ installGit () {
             echo "I'm going to install git via apt. I may need your sudo password."
             sudo apt-get -y install git
             ;;
-        *Red Hat*)
+        *Hat*)
             echo "I'm going to install git via yum. I may need your sudo password."
             sudo yum -y install git
             ;;
