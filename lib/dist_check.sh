@@ -19,6 +19,3 @@ function red_hat {
         echo 0
     fi
 }
-
-ubuntu
-red_hat

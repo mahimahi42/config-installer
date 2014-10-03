@@ -15,6 +15,3 @@ function linux {
         echo 0
     fi
 }
-
-mac
-linux
