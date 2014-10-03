@@ -1,5 +1,8 @@
 #!/usr/bin/env sh
 
+# Some of this is based off of https://gist.github.com/brandonb927/3195465 
+# and https://github.com/MatthewMueller/dots/blob/master/os/ubuntu/index.sh
+
 # Exit immediately on encountering an non-zero exit code
 set -e
 
